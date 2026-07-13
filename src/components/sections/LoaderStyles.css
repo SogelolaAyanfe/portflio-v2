@@ -1,0 +1,43 @@
+  .spinner-container {
+    position: fixed;
+    z-index: 99999;
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    visibility: hidden;
+    opacity: 0;
+    animation: fadeOut 1.7s alternate;
+    animation-delay: 0s;
+  }
+  .spinner{ 
+    height: 100px;
+    width: 100px;
+    border: 6px solid;
+    border-color: #C0DC6E transparent #C0DC6E transparent;
+    border-radius: 50%;
+    animation: spin 1.5s ease infinite;
+  }
+  
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  @keyframes fadeOut {
+    0% {
+      opacity:1;
+      visibility: visible;
+    }
+    90% {
+      opacity: 1
+    }
+    100% {
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+  
