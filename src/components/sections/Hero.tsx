@@ -101,7 +101,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="flex flex-col-reverse lg:flex-row justify-center lg:justify-between w-full h-screen lg:h-screen bg-[url(future-hero-bg.jpg)] bg-cover bg-center bg-no-repeat max-sm:p-2 p-6 md:p-10 lg:p-15 gap-10 lg:gap-0">
+    <section className="flex flex-col-reverse lg:flex-row justify-center lg:justify-between w-full h-screen lg:h-screen bg-[url('/future-hero-bg.jpg')] bg-cover bg-center bg-no-repeat max-sm:p-2 p-6 md:p-10 lg:p-15 gap-10 lg:gap-0">
       {/* INTRODUCTORY WRITING */}
       <motion.div
         className="flex flex-col w-full lg:w-[50%] justify-center items-center lg:items-start text-center lg:text-left break-normal relative z-50"
