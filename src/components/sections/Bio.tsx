@@ -1,4 +1,4 @@
-import picture from "../../../public/picture.jpg";
+import picture from "../../../public/picture-2.jpg";
 import bioBg from "../../../public/bio-bg.jpg";
 import { motion } from "motion/react";
 
