@@ -16,7 +16,7 @@ const ContactHero = () => {
           transition={{ duration: 1.5, ease: "easeOut" }}
         >
           Let's
-          <span>contact</span>
+          <span>connect</span>
         </motion.h1>
         <motion.h3
           className=" max-sm:w-80 w-150 mx-auto text-white/80 tracking-wide"
