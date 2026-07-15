@@ -9,35 +9,37 @@
     background-color: black;
     visibility: hidden;
     opacity: 0;
-    animation: fadeOut 1.7s alternate;
+    animation: fadeOut 3s alternate;
     animation-delay: 0s;
   }
-  .spinner{ 
-    height: 100px;
-    width: 100px;
-    border: 6px solid;
-    border-color: #C0DC6E transparent #C0DC6E transparent;
-    border-radius: 50%;
-    animation: spin 1.5s ease infinite;
+
+  .spinner { 
+  height: 100px;
+  width: 100px;
+  border: 10px solid;
+  padding: 10px;
+  border-color: #C0DC6E transparent #C0DC6E transparent;
+  border-radius: 50%;
+
+  animation: spin 1s linear 2 forwards; 
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
   }
-  
-  @keyframes spin {
-    to {
-      transform: rotate(360deg);
-    }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+    visibility: visible;
   }
-  
-  @keyframes fadeOut {
-    0% {
-      opacity:1;
-      visibility: visible;
-    }
-    90% {
-      opacity: 1
-    }
-    100% {
-      opacity: 0;
-      visibility: hidden;
-    }
+  90% {
+    opacity: 1;
   }
-  
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}

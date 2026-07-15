@@ -208,7 +208,6 @@ const Experiences = () => {
 
               font-bold
               tracking-wider
-              font-['Manrope',sans-serif]
 
               transition-all
               duration-500

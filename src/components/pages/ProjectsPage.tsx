@@ -113,7 +113,7 @@ const ProjectsPage = () => {
       <motion.h1
         initial={{ opacity: 0, y: -16 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, ease: "easeOut" }}
+        transition={{ duration: 5, ease: "easeOut" }}
         className="mt-10 max-sm:mt-20 text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-wide text-[#C0DC6E]"
       >
         Projects
@@ -125,7 +125,7 @@ const ProjectsPage = () => {
         className="w-full flex-1 flex items-center justify-center"
         initial={{ opacity: 0, y: 24 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1, ease: "easeOut" }}
+        transition={{ duration: 5, ease: "easeOut" }}
       >
         <ChakraProvider value={system}>
           <Carousel.Root

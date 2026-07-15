@@ -106,8 +106,8 @@ const Hero = () => {
       <motion.div
         className="flex flex-col w-full lg:w-[50%] justify-center items-center lg:items-start text-center lg:text-left break-normal relative z-50"
         initial={{ x: -100, opacity: 0 }}
-        whileInView={{ x: 0, opacity: 1 }}
-        transition={{ duration: 3, ease: "easeOut" }}
+        animate={{ x: 0, opacity: 1 }}
+        transition={{ duration: 5, ease: "easeOut" }}
       >
         <h1 className="text-3xl max-sm:text-xl lg:text-4xl tracking-wide leading-snug">
           Bridging the gap between
@@ -156,9 +156,9 @@ const Hero = () => {
             transition: "height 0.4s ease-out",
           }}
           initial={{ x: 100, opacity: 0 }}
-          whileInView={{ x: 0, opacity: 1 }}
+          animate={{ x: 0, opacity: 1 }}
           viewport={{ amount: 0.3 }}
-          transition={{ duration: 4, ease: "easeOut" }}
+          transition={{ duration: 6, ease: "easeOut" }}
         >
           <Spline
             scene="/scene (4).splinecode"

@@ -33,7 +33,7 @@ const Footer = () => {
               </h2>
               <p className="text-black text-base sm:text-lg">Got an idea?</p>
               <a href="/Contact">
-                <button className=" flex items-center text-black border-2 rounded-4xl text-sm font-bold font-['Manrope',sans-serif] tracking-wider p-3 gap-2 hover:bg-black hover:text-white hover:border-black transition-colors duration-800 ease-in-out ">
+                <button className=" flex items-center text-black border-2 rounded-4xl text-sm font-bold  tracking-wider p-3 gap-2 hover:bg-black hover:text-white hover:border-black transition-colors duration-800 ease-in-out ">
                   Let's Connect
                   <span className="flex items-center">
                     <GoDotFill />
@@ -54,7 +54,7 @@ const Footer = () => {
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-black/80 hover:text-black transition-colors text-sm sm:text-base"
+                    className="text-black hover:font-extrabold transition-colors text-sm sm:text-base"
                   >
                     {social.label}
                   </a>

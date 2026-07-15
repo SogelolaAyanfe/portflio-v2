@@ -49,7 +49,7 @@ const ContactForm = () => {
         : "bg-black text-white"; // Sending....
 
   return (
-    <section className="w-full min-h-screen flex flex-col md:flex-row justify-between bg-white text-black p-6 sm:p-10 max-md:p-none font-['Manrope',sans-serif]">
+    <section className="w-full min-h-screen flex flex-col md:flex-row justify-between bg-white text-black p-6 sm:p-10 max-md:p-none ">
       <motion.div
         className="flex flex-col md:flex-row w-full gap-10 md:gap-0"
         initial={{ y: -100, opacity: 0, scale: 0.7 }}
@@ -100,7 +100,7 @@ const ContactForm = () => {
               <div className="flex flex-col gap-2">
                 <label
                   htmlFor="firstname"
-                  className="font-semibold font-['Manrope',sans-serif]"
+                  className="font-semibold "
                 >
                   First Name
                 </label>
@@ -114,7 +114,7 @@ const ContactForm = () => {
               <div className="flex flex-col gap-2">
                 <label
                   htmlFor="lastname"
-                  className="font-bold font-['Manrope',sans-serif]"
+                  className="font-bold "
                 >
                   Last Name
                 </label>
@@ -129,7 +129,7 @@ const ContactForm = () => {
             <div className="flex flex-col gap-2">
               <label
                 htmlFor="email"
-                className="font-bold font-['Manrope',sans-serif]"
+                className="font-bold "
               >
                 Email
               </label>
@@ -143,7 +143,7 @@ const ContactForm = () => {
             <div className="flex flex-col gap-2">
               <label
                 htmlFor="phone"
-                className="font-bold font-['Manrope',sans-serif]"
+                className="font-bold "
               >
                 Phone Number
               </label>
@@ -157,7 +157,7 @@ const ContactForm = () => {
             <div className="flex flex-col gap-2">
               <label
                 htmlFor="message"
-                className="font-bold font-['Manrope',sans-serif] "
+                className="font-bold  "
               >
                 Message
               </label>
@@ -170,7 +170,7 @@ const ContactForm = () => {
             <button
               type="submit"
               className="
-              flex items-center gap-2 w-50 justify-center bg-black text-white p-4 rounded-full font-bold tracking-wider font-['Manrope',sans-serif] transition-all duration-500 hover:bg-[#C0DC6E] hover:text-black "
+              flex items-center gap-2 w-50 justify-center bg-black text-white p-4 rounded-full font-bold tracking-wider  transition-all duration-500 hover:bg-[#C0DC6E] hover:text-black "
             >
               Submit Form
               <GoDotFill />

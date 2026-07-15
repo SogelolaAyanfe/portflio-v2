@@ -52,7 +52,7 @@ const Projects = () => {
           lg:text-4xl
 
           font-medium
-          font-['Manrope',sans-serif]
+          
         "
         initial={{ scale: 0.8, opacity: 0 }}
         whileInView={{ scale: 1, opacity: 1 }}
@@ -110,7 +110,7 @@ const Projects = () => {
               "
             />
 
-            <h2 className="text-lg sm:text-xl font-medium font-['Manrope',sans-serif]">
+            <h2 className="text-lg sm:text-xl font-medium ">
               {project.title}
             </h2>
           </motion.div>
@@ -137,7 +137,6 @@ const Projects = () => {
 
               font-bold
               tracking-wider
-              font-['Manrope',sans-serif]
 
               transition-all
               duration-500
