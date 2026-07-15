@@ -43,13 +43,13 @@ const ContactForm = () => {
 
   const toastStyles =
     result === "Form Submitted Successfully"
-      ? "bg-[#C0DC6E] text-black"
+      ? "bg-black text-white"
       : result === "Error"
         ? "bg-red-600 text-white"
         : "bg-black text-white"; // Sending....
 
   return (
-    <section className="w-full min-h-screen flex flex-col md:flex-row justify-between bg-white text-black p-6 sm:p-10 max-md:p-none ">
+    <section className="w-full min-h-screen flex flex-col md:flex-row justify-between bg-[#C0DC6E] text-black p-6 sm:p-10 max-md:p-none ">
       <motion.div
         className="flex flex-col md:flex-row w-full gap-10 md:gap-0"
         initial={{ y: -100, opacity: 0, scale: 0.7 }}
@@ -63,7 +63,9 @@ const ContactForm = () => {
             style={{ backgroundImage: `url(${bioBg})` }}
           >
             <div className="flex flex-col gap-8  max-sm:gap-3 ">
-              <h1 className="text-3xl font-bold max-sm:text-2xl">Contact Information</h1>
+              <h1 className="text-3xl font-bold max-sm:text-2xl">
+                Contact Information
+              </h1>
               <p className="text-base">
                 If you have any questions, feel free to get in touch with me
               </p>
@@ -90,87 +92,72 @@ const ContactForm = () => {
           </div>
         </div>
         {/*Form*/}
-        <div className="flex w-full md:w-[60%] justify-center max-sm:justify-start  items-center bg-white">
+        <div className="flex w-full md:w-[60%] justify-center max-sm:justify-start  items-center bg-[#C0DC6E]">
           <form
             onSubmit={onSubmit}
-            className="flex flex-col gap-10 max-sm:w-full"
+            className="flex flex-col gap-10 max-sm:w-full placeholde:bg-black"
           >
             {/*Name fields*/}
             <div className="flex flex-col sm:flex-row gap-6 sm:gap-10 w-full">
               <div className="flex flex-col gap-2">
-                <label
-                  htmlFor="firstname"
-                  className="font-semibold "
-                >
+                <label htmlFor="firstname" className="font-semibold ">
                   First Name
                 </label>
                 <input
                   type="text"
                   name="firstname"
                   required
-                  className="border-2 rounded-sm h-12 p-2"
+                  className="border-2 outline-black rounded-sm h-12 p-2"
                 />
               </div>
               <div className="flex flex-col gap-2">
-                <label
-                  htmlFor="lastname"
-                  className="font-bold "
-                >
+                <label htmlFor="lastname" className="font-bold ">
                   Last Name
                 </label>
                 <input
                   type="text"
                   name="lastname"
                   required
-                  className="border-2 rounded-sm h-12 p-2"
+                  className="border-2 outline-black rounded-sm h-12 p-2"
                 />
               </div>
             </div>
             <div className="flex flex-col gap-2">
-              <label
-                htmlFor="email"
-                className="font-bold "
-              >
+              <label htmlFor="email" className="font-bold ">
                 Email
               </label>
               <input
                 type="email"
                 name="email"
                 required
-                className="border-2 rounded-sm h-12"
+                className="border-2 outline-black rounded-sm h-12"
               />
             </div>
             <div className="flex flex-col gap-2">
-              <label
-                htmlFor="phone"
-                className="font-bold "
-              >
+              <label htmlFor="phone" className="font-bold ">
                 Phone Number
               </label>
               <input
                 type="tel"
                 name="phone"
                 required
-                className="border-2 rounded-sm  h-12 p-2"
+                className="border-2 outline-black rounded-sm  h-12 p-2"
               />
             </div>
             <div className="flex flex-col gap-2">
-              <label
-                htmlFor="message"
-                className="font-bold  "
-              >
+              <label htmlFor="message" className="font-bold  ">
                 Message
               </label>
               <textarea
                 name="message"
                 required
-                className="border-2 rounded-sm p-2 resize-none"
+                className="border-2 outline-black rounded-sm p-2 resize-none"
               ></textarea>
             </div>
             <button
               type="submit"
               className="
-              flex items-center gap-2 w-50 justify-center bg-black text-white p-4 rounded-full font-bold tracking-wider  transition-all duration-500 hover:bg-[#C0DC6E] hover:text-black "
+              flex items-center gap-2 w-50 justify-center bg-black text-white p-4 rounded-full font-bold tracking-wider  transition-all duration-500 hover:bg-black/70 "
             >
               Submit Form
               <GoDotFill />

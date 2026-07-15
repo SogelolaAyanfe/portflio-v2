@@ -179,7 +179,7 @@ const Experiences = () => {
                   <polyline points="20 6 9 17 4 12" />
                 </svg>
 
-                <span className="text-sm sm:text-base leading-7 text-white/80">
+                <span className="text-[18px] leading-7 text-white/80">
                   {task}
                 </span>
               </li>

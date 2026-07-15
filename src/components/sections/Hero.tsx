@@ -120,7 +120,7 @@ const Hero = () => {
           the layout — but it no longer swallows the rest of the
           heading and causes it to overlap the next line.
         */}
-        <div className="flex justify-center lg:justify-start min-h-[2rem] sm:min-h-[2.5rem] lg:min-h-[3rem] mt-2 lg:mt-2">
+        <div className="flex justify-center lg:justify-start min-h-[2rem] sm:min-h-[2.5rem] lg:min-h-[3rem] mt-1 lg:mt-2">
           <span className="text-[#C0DC6E] text-2xl max-sm:text-xl lg:text-4xl tracking-wide">
             <TypeAnimation
               sequence={[
