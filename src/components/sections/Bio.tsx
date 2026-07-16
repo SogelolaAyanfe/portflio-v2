@@ -29,7 +29,7 @@ const Bio = () => {
         initial={{ scale: 0.8, opacity: 0 }}
         whileInView={{ scale: 1, opacity: 1 }}
         viewport={{ amount: 0.1 }}
-        transition={{ duration: 1, ease: "easeOut" }}
+        transition={{ duration: 1, ease: "easeIn" }}
       >
         <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-wide text-[#C0DC6E] text-center lg:text-left">
           Biography
@@ -77,8 +77,8 @@ const Bio = () => {
                 md:w-[50vw]
                 lg:w-[32vw]
 
-                max-w-[420px]
-                min-w-[240px]
+                max-w-105
+                min-w-60
 
                 h-auto
 

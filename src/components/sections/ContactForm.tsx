@@ -164,7 +164,7 @@ const ContactForm = () => {
             </button>
 
             {isVisible && (
-              <div className="fixed inset-0 flex items-center justify-center backdrop-blur-sm bg-black/30 z-[100]">
+              <div className="fixed inset-0 flex items-center justify-center backdrop-blur-sm bg-black/30 z-100">
                 <span
                   className={`flex items-center justify-center text-center h-22 px-10 font-bold tracking-wide shadow-lg ${toastStyles}`}
                 >
