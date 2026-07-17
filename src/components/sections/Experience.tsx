@@ -141,7 +141,7 @@ const Experiences = () => {
                 }`}
               >
                 <span
-                  className={`absolute left-0 top-0 h-full w-[3px] rounded-md ${
+                  className={`absolute left-0 top-0 h-full w-0.75 rounded-md ${
                     isActive ? "bg-[#C0DC6E]" : "bg-transparent"
                   }`}
                 />
@@ -195,25 +195,7 @@ const Experiences = () => {
             className="
               flex
               items-center
-              gap-2
-
-              px-6
-              py-3
-
-              rounded-full
-              border-2
-
-              text-sm
-              sm:text-base
-
-              font-bold
-              tracking-wider
-
-              transition-all
-              duration-500
-
-              hover:bg-white
-              hover:text-black
+              gap-2 px-6 py-3 rounded-full border-2 text-sm sm:text-base font-bold tracking-wider transition-colors ease-in duration-500 hover:bg-white hover:text-black
             "
           >
             Download CV

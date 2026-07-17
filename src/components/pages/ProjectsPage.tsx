@@ -111,9 +111,9 @@ const ProjectsPage = () => {
       style={{ backgroundImage: `url(${bioBg})` }}
     >
       <motion.h1
-        initial={{ opacity: 0, y: -16 }}
+        initial={{ opacity: 0, y: -40 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 5, ease: "easeIn" }}
+        transition={{ duration: 4, ease: "easeIn" }}
         className="mt-10 max-sm:mt-20 text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-wide text-[#C0DC6E]"
       >
         Projects
@@ -123,9 +123,9 @@ const ProjectsPage = () => {
           carousel within it, independently of the h1 above. */}
       <motion.div
         className="w-full flex-1 flex items-center justify-center"
-        initial={{ opacity: 0, y: 24 }}
+        initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 5, ease: "easeIn" }}
+        transition={{ duration: 4, ease: "easeIn" }}
       >
         <ChakraProvider value={system}>
           <Carousel.Root

@@ -13,7 +13,7 @@ const ContactHero = () => {
           initial={{ y: -100, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
           viewport={{ amount: 0.3 }}
-          transition={{ duration: 5, ease: "easeOut" }}
+          transition={{ duration: 4, ease: "easeOut" }}
         >
           Let's
           <span>connect</span>
@@ -23,7 +23,7 @@ const ContactHero = () => {
           initial={{ y: 100, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           viewport={{ amount: 0.3 }}
-          transition={{ duration: 5, ease: "easeOut" }}
+          transition={{ duration: 4, ease: "easeOut" }}
         >
           If you have a project you would like to discuss or a question you
           would like answered, please feel free to reach out to me. I'm always

@@ -157,7 +157,7 @@ const ContactForm = () => {
             <button
               type="submit"
               className="
-              flex items-center gap-2 w-50 justify-center bg-black text-white p-4 rounded-full font-bold tracking-wider  transition-all duration-500 hover:bg-black/70 "
+              flex items-center gap-2 w-50 justify-center bg-black text-white p-4 rounded-full font-bold tracking-wider transition-all ease-in duration-500 hover:bg-[url('/form-bg.jpg')] hover:bg-center hover:bg-cover  "
             >
               Submit Form
               <GoDotFill />

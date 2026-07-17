@@ -109,7 +109,7 @@ const Hero = () => {
         animate={{ x: 0, opacity: 1 }}
         transition={{ duration: 5, ease: "easeOut" }}
       >
-        <h1 className="text-3xl max-sm:text-xl lg:text-4xl tracking-wide leading-snug">
+        <h1 className="text-3xl sm:text-4xl lg:text-5xl tracking-wide leading-snug">
           Bridging the gap between
         </h1>
 
@@ -120,8 +120,8 @@ const Hero = () => {
           the layout — but it no longer swallows the rest of the
           heading and causes it to overlap the next line.
         */}
-        <div className="flex justify-center lg:justify-start min-h-[2rem] sm:min-h-[2.5rem] lg:min-h-[3rem] mt-1 lg:mt-2">
-          <span className="text-[#C0DC6E] text-2xl max-sm:text-xl lg:text-4xl tracking-wide">
+        <div className="flex justify-center lg:justify-start min-h-8 sm:min-h-10 lg:min-h-12 mt-1 lg:mt-2">
+          <span className="text-[#C0DC6E] text-3xl sm:text-4xl lg:text-5xl tracking-wide">
             <TypeAnimation
               sequence={[
                 HERO_INFO[0].text,
@@ -137,7 +137,7 @@ const Hero = () => {
           </span>
         </div>
 
-        <h1 className="text-2xl max-sm:text-xl lg:text-4xl tracking-wide leading-8 lg:leading-12 mt-2 lg:mt-3">
+        <h1 className="text-3xl sm:text-4xl lg:text-5xl tracking-wide leading-8 lg:leading-12 mt-2 lg:mt-3">
           to create meaningful digital experiences.
         </h1>
 

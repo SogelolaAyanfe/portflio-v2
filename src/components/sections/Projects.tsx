@@ -110,7 +110,7 @@ const Projects = () => {
               "
             />
 
-            <h2 className="text-lg sm:text-xl font-medium ">
+            <h2 className="text-lg text-white/80 sm:text-xl font-medium ">
               {project.title}
             </h2>
           </motion.div>
@@ -122,27 +122,7 @@ const Projects = () => {
         <a href="/Projects">
           <button
             className="
-              flex
-              items-center
-              gap-2
-
-              px-6
-              py-3
-
-              rounded-full
-              border-2
-
-              text-sm
-              sm:text-base
-
-              font-bold
-              tracking-wider
-
-              transition-all
-              duration-500
-
-              hover:bg-white
-              hover:text-black
+              flex items-center gap-2 px-6 py-3 rounded-full border-2 text-sm m:text-base font-bold tracking-wider transition-colors ease-in duration-500 hover:bg-white hover:text-black
             "
           >
             View All

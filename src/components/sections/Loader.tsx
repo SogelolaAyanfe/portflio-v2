@@ -7,6 +7,7 @@ const Loader = () => {
       <div className="spinner">
         <img src={logo} alt="Logo" className="spinner-logo" />
       </div>
+      <h1 className="spinner-header">LOADING...</h1>
     </div>
   );
 };

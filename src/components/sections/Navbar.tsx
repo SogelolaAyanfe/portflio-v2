@@ -42,7 +42,6 @@ const Navbar = () => {
     <header className={color ? "header header-bg" : "header"}>
       <a href="/" className="logo">
         <img src={logo} alt="Logo" className="logo-img" />
-       
       </a>
 
       <ul className={isMenuOpen ? "nav-menu active" : "nav-menu"}>
