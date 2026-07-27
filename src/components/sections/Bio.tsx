@@ -6,12 +6,10 @@ const Bio = () => {
   return (
     <section
       className="
-        min-h-screen
-        w-full
-
+        min-h-full
+        w-full max-w-[1440px] mx-auto
         bg-cover
         bg-center
-
         px-6
         sm:px-8
         md:px-10
@@ -29,7 +27,7 @@ const Bio = () => {
         initial={{ scale: 0.8, opacity: 0 }}
         whileInView={{ scale: 1, opacity: 1 }}
         viewport={{ amount: 0.1 }}
-        transition={{ duration: 1, ease: "easeIn" }}
+        transition={{ duration: 1, ease: "easeOut" }}
       >
         <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-wide text-[#C0DC6E] text-center lg:text-left">
           Biography
@@ -77,8 +75,8 @@ const Bio = () => {
                 md:w-[50vw]
                 lg:w-[32vw]
 
-                max-w-105
-                min-w-60
+                max-w-[420px]
+                min-w-[240px]
 
                 h-auto
 

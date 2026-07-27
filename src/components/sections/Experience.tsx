@@ -61,7 +61,7 @@ const Experiences = () => {
     <section
       className="
         w-full
-
+  w-full max-w-[1440px] mx-auto
         bg-cover
         bg-center
 

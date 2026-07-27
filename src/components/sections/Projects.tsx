@@ -10,9 +10,9 @@ const Projects = () => {
   return (
     <section
       className="
-        min-h-screen
+        min-h-full
         w-full
-
+  w-full max-w-[1440px] mx-auto
         bg-cover
         bg-center
 

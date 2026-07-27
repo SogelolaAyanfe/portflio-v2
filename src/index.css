@@ -7,14 +7,11 @@
 
 html,
 body {
-  width: 100vw;
   scrollbar-color: #464646 #C0DC6E;
   scrollbar-width: thin;
   scroll-behavior: smooth;
   color: white;
-  max-width: 1440px;
-  margin: 0 auto;
-    font-family: "Montenegrin Gothic One", serif;
+  font-family: "Montenegrin Gothic One", serif;
 }
 
 canvas {

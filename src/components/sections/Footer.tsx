@@ -1,4 +1,4 @@
-import bioBg from "../../../public/bio-bg.jpg";
+// import bioBg from "../../../public/bio-bg.jpg";
 import { GoDotFill } from "react-icons/go";
 import { motion } from "motion/react";
 
@@ -14,8 +14,8 @@ const socials = [
 const Footer = () => {
   return (
     <section
-      className="flex flex-col w-full gap-4 "
-      style={{ backgroundImage: `url(${bioBg})` }}
+      className="flex flex-col w-full gap-4 bg-black"
+   
     >
       <footer className=" px-4 sm:px-6 py-10">
         <motion.div
@@ -33,7 +33,7 @@ const Footer = () => {
               </h2>
               <p className="text-black text-base sm:text-lg">Got an idea?</p>
               <a href="/Contact">
-                <button className=" flex items-center text-black border-2 rounded-4xl text-sm font-bold  tracking-wider p-3 gap-2 hover:bg-black hover:text-white hover:border-black transition-colors ease-in duration-500 ">
+                <button className=" flex font-bold items-center text-black border-2 rounded-4xl text-sm font-bold  tracking-wider p-3 gap-2 hover:bg-black hover:text-white hover:border-black transition-colors ease-in duration-500 ">
                   Let's Connect
                   <span className="flex items-center">
                     <GoDotFill />

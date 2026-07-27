@@ -21,7 +21,7 @@ const getBreakpoint = (): "xs" | "sm" | "md" | "lg" | "xl" => {
 };
 
 const ZOOM_MAP: Record<"xs" | "sm" | "md" | "lg" | "xl", number> = {
-  xl: 2.7,
+  xl: 4,
   lg: 2.5,
   md: 2.5,
   sm: 2.5,
@@ -101,10 +101,10 @@ const Hero = () => {
   };
 
   return (
-    <section className="flex flex-col-reverse lg:flex-row justify-center lg:justify-between w-full h-screen lg:h-screen bg-[url('/future-hero-bg.jpg')] bg-cover bg-center bg-no-repeat max-sm:p-2 p-6 md:p-10 lg:p-15 gap-10 lg:gap-0">
+    <main className="flex flex-col-reverse lg:flex-row justify-center lg:justify-between w-full h-screen lg:h-screen bg-[url('/future-hero-bg.jpg')] bg-cover bg-center bg-no-repeat max-sm:p-2 p-6 md:p-10 lg:p-15 gap-10 lg:gap-0">
       {/* INTRODUCTORY WRITING */}
       <motion.div
-        className="flex flex-col w-full lg:w-[50%] justify-center items-center lg:items-start text-center lg:text-left break-normal relative z-50"
+        className="flex flex-col lg:w-[50%] justify-center items-center lg:items-start text-center lg:text-left break-normal relative z-50"
         initial={{ x: -100, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
         transition={{ duration: 5, ease: "easeOut" }}
@@ -112,14 +112,6 @@ const Hero = () => {
         <h1 className="text-3xl sm:text-4xl lg:text-5xl tracking-wide leading-snug">
           Bridging the gap between
         </h1>
-
-        {/*
-          This wrapper only constrains the height of the TYPING LINE
-          itself (not the whole heading block above), so the animated
-          text has a stable slot to grow/shrink in without shifting
-          the layout — but it no longer swallows the rest of the
-          heading and causes it to overlap the next line.
-        */}
         <div className="flex justify-center lg:justify-start min-h-8 sm:min-h-10 lg:min-h-12 mt-1 lg:mt-2">
           <span className="text-[#C0DC6E] text-3xl sm:text-4xl lg:text-5xl tracking-wide">
             <TypeAnimation
@@ -174,7 +166,7 @@ const Hero = () => {
           />
         </motion.div>
       </div>
-    </section>
+    </main>
   );
 };
 

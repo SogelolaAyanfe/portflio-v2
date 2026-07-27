@@ -49,7 +49,7 @@ const ContactForm = () => {
         : "bg-black text-white"; // Sending....
 
   return (
-    <section className="w-full min-h-screen flex flex-col md:flex-row justify-between bg-[#C0DC6E] text-black p-6 sm:p-10 max-md:p-none ">
+    <section className="w-full min-h-screen  max-w-[1440px] mx-auto flex flex-col md:flex-row justify-between bg-[#C0DC6E] text-black p-6 sm:p-10 max-md:p-none ">
       <motion.div
         className="flex flex-col md:flex-row w-full gap-10 md:gap-0"
         initial={{ y: -100, opacity: 0, scale: 0.7 }}

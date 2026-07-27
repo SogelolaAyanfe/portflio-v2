@@ -3,7 +3,7 @@ import ContactForm from "../sections/ContactForm"
 
 const ContactMePage = () => {
   return (
-    <div>
+    <div >
       <ContactHero />
       <ContactForm />
     </div>
