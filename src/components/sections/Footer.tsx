@@ -32,7 +32,7 @@ const Footer = () => {
                 Thanks for Visiting
               </h2>
               <p className="text-black text-base sm:text-lg">Got an idea?</p>
-              <a href="/Contact">
+              <a href="/contact">
                 <button className=" flex font-bold items-center text-black border-2 rounded-4xl text-sm font-bold  tracking-wider p-3 gap-2 hover:bg-black hover:text-white hover:border-black transition-colors ease-in duration-500 ">
                   Let's Connect
                   <span className="flex items-center">

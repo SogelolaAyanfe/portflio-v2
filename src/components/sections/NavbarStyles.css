@@ -1,7 +1,6 @@
 html,
 body {
   overflow-x: hidden;
- 
 }
 
 .header {
@@ -42,8 +41,14 @@ body {
   width: 76px;
   height: 76px;
   object-fit: contain;
-  
 }
+
+.logo-img:hover {
+  scale: calc(1.1);
+  transition: 0.4s ease-in-out;
+}
+
+
 
 .logo h1 {
   color: white;
@@ -146,7 +151,7 @@ ul {
   }
 
   .nav-menu li a {
-  font-size: 40px;
+    font-size: 40px;
   }
 }
 
@@ -187,6 +192,4 @@ ul {
   .nav-menu li a {
     font-size: 35px;
   }
-
-  
 }

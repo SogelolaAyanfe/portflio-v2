@@ -119,7 +119,7 @@ const Projects = () => {
 
       {/* Button */}
       <div className="flex justify-center mt-14">
-        <a href="/Projects">
+        <a href="/projects">
           <button
             className="
               flex items-center gap-2 px-6 py-3 rounded-full border-2 text-sm m:text-base font-bold tracking-wider transition-colors ease-in duration-500 hover:bg-white hover:text-black
