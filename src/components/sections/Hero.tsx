@@ -1,8 +1,13 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, lazy, Suspense } from "react";
 import { TypeAnimation } from "react-type-animation";
-import Spline from "@splinetool/react-spline";
 import type { Application } from "@splinetool/runtime";
 import { motion } from "motion/react";
+
+// Lazy-load Spline so its JS, the Draco wasm decoder, and the
+// .splinecode scene file are split into a separate chunk and fetched
+// only when we actually decide to mount it — not as part of the
+// initial critical request chain.
+const Spline = lazy(() => import("@splinetool/react-spline"));
 
 const HERO_INFO = [
   { text: "technical functionality " },
@@ -10,8 +15,15 @@ const HERO_INFO = [
   { text: "innovation and reality" },
 ];
 
+// Named alias instead of an inline union — keeping this as a single
+// token avoids TS misparsing `useState<"xs" | "sm" | ...>(...)` as a
+// chain of comparison operators when the generic spans multiple lines
+// in a .tsx file (that misparse is what caused breakpoint to widen to
+// `string` and cascade into the Record<> indexing errors).
+type Breakpoint = "xs" | "sm" | "md" | "lg" | "xl";
+
 // Helper function to figure out the active Tailwind breakpoint instantly
-const getBreakpoint = (): "xs" | "sm" | "md" | "lg" | "xl" => {
+const getBreakpoint = (): Breakpoint => {
   if (typeof window === "undefined") return "xs";
   if (window.matchMedia("(min-width: 1280px)").matches) return "xl";
   if (window.matchMedia("(min-width: 1024px)").matches) return "lg";
@@ -20,7 +32,7 @@ const getBreakpoint = (): "xs" | "sm" | "md" | "lg" | "xl" => {
   return "xs";
 };
 
-const ZOOM_MAP: Record<"xs" | "sm" | "md" | "lg" | "xl", number> = {
+const ZOOM_MAP: Record<Breakpoint, number> = {
   xl: 4,
   lg: 2.5,
   md: 2.5,
@@ -28,7 +40,7 @@ const ZOOM_MAP: Record<"xs" | "sm" | "md" | "lg" | "xl", number> = {
   xs: 1.5,
 };
 
-const HEIGHT_MAP: Record<"xs" | "sm" | "md" | "lg" | "xl", string> = {
+const HEIGHT_MAP: Record<Breakpoint, string> = {
   xl: "42rem",
   lg: "36rem",
   md: "28rem",
@@ -37,9 +49,9 @@ const HEIGHT_MAP: Record<"xs" | "sm" | "md" | "lg" | "xl", string> = {
 };
 
 const Hero = () => {
-  const [breakpoint, setBreakpoint] = useState<
-    "xs" | "sm" | "md" | "lg" | "xl"
-  >(() => getBreakpoint());
+  const [breakpoint, setBreakpoint] = useState<Breakpoint>(() =>
+    getBreakpoint(),
+  );
 
   // Holds the live Spline app instance so we can call setZoom() on it
   // whenever the breakpoint changes, instead of CSS-scaling the canvas.
@@ -50,6 +62,13 @@ const Hero = () => {
   // model on load (Spline briefly renders at the scene's baked-in
   // default zoom before our onLoad handler gets a chance to correct it).
   const [isSplineReady, setIsSplineReady] = useState(false);
+
+  // Controls whether we've even started loading the Spline chunk yet.
+  // Deferred until the browser is idle (or a short timeout on Safari,
+  // which lacks requestIdleCallback) so the 3D scene never competes
+  // with the initial critical request chain / LCP.
+  const [shouldLoadSpline, setShouldLoadSpline] = useState(false);
+  const heroModelRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     const queries = {
@@ -74,6 +93,46 @@ const Hero = () => {
     };
   }, []);
 
+ 
+  useEffect(() => {
+    let idleId: number | ReturnType<typeof setTimeout> | undefined;
+    let usedIdleCallback = false;
+    let observer: IntersectionObserver | undefined;
+
+    const load = () => setShouldLoadSpline(true);
+
+    if (typeof window.requestIdleCallback === "function") {
+      idleId = window.requestIdleCallback(load, { timeout: 2000 });
+      usedIdleCallback = true;
+    } else {
+      idleId = setTimeout(load, 300);
+    }
+
+    if (heroModelRef.current && typeof IntersectionObserver !== "undefined") {
+      observer = new IntersectionObserver(
+        (entries) => {
+          if (entries[0]?.isIntersecting) load();
+        },
+        { rootMargin: "200px" },
+      );
+      observer.observe(heroModelRef.current);
+    }
+
+    return () => {
+      if (idleId !== undefined) {
+        if (
+          usedIdleCallback &&
+          typeof window.cancelIdleCallback === "function"
+        ) {
+          window.cancelIdleCallback(idleId as number);
+        } else {
+          clearTimeout(idleId as ReturnType<typeof setTimeout>);
+        }
+      }
+      observer?.disconnect();
+    };
+  }, []);
+
   // Whenever breakpoint changes, zoom the actual 3D camera rather than
   // CSS-scaling the rendered canvas. Requires the Spline app instance,
   // captured in onLoad below.
@@ -95,8 +154,8 @@ const Hero = () => {
     // guarantees the zoomed frame has been painted before we reveal it.
     requestAnimationFrame(() => {
       requestAnimationFrame(() => {
-  setTimeout(() => setIsSplineReady(true), 100);
-});;
+        setTimeout(() => setIsSplineReady(true), 100);
+      });
     });
   };
 
@@ -139,7 +198,10 @@ const Hero = () => {
       </motion.div>
 
       {/* 3D MODEL CONTAINER */}
-      <div className="flex w-full lg:w-[50%] justify-center items-center relative z-0">
+      <div
+        ref={heroModelRef}
+        className="flex w-full lg:w-[50%] justify-center items-center relative z-0"
+      >
         <motion.div
           className="flex items-center justify-center w-full"
           style={{
@@ -152,18 +214,38 @@ const Hero = () => {
           viewport={{ amount: 0.3 }}
           transition={{ duration: 6, ease: "easeOut" }}
         >
-          <Spline
-            scene="/scene (4).splinecode"
-            onLoad={handleSplineLoad}
-            style={{
-              width: "100%",
-              height: "100%",
-              pointerEvents: "none",
-              background: "transparent",
-              opacity: isSplineReady ? 1 : 0,
-              transition: "opacity 0.3s ease-out",
-            }}
-          />
+          {/* Lightweight placeholder — keeps layout stable and gives
+              Lighthouse a real paint target that isn't blocked on the
+              Spline/Draco/scene download chain. Swap in for a subtle
+              gradient or low-res screenshot of the model if you have one. */}
+          {!isSplineReady && (
+            <div
+              className="w-full h-full rounded-2xl"
+              style={{
+                background:
+                  "radial-gradient(circle at center, rgba(192,220,110,0.08), transparent 70%)",
+              }}
+              aria-hidden="true"
+            />
+          )}
+
+          {shouldLoadSpline && (
+            <Suspense fallback={null}>
+              <Spline
+                scene="/scene (4).splinecode"
+                onLoad={handleSplineLoad}
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  pointerEvents: "none",
+                  background: "transparent",
+                  opacity: isSplineReady ? 1 : 0,
+                  position: isSplineReady ? "static" : "absolute",
+                  transition: "opacity 0.3s ease-out",
+                }}
+              />
+            </Suspense>
+          )}
         </motion.div>
       </div>
     </main>
