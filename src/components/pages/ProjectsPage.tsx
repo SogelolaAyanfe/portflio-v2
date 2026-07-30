@@ -11,11 +11,11 @@ import { motion } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { system } from "../../../src/chakra-system";
 import bioBg from "../../../public/bio-bg.jpg";
-import projectOne from "../../assets/projects-images/project-0.png";
-import projectThree from "../../assets/projects-images/project-3.png";
-import projectTwo from "../../assets/projects-images/project-2.png";
-import projectFour from "../../assets/projects-images/project-5.png";
-import projectFive from "../../assets/projects-images/project-1.png";
+import projectOne from "../../assets/projects-images/project-0.avif";
+import projectThree from "../../assets/projects-images/project-3.avif";
+import projectTwo from "../../assets/projects-images/project-2.avif";
+import projectFour from "../../assets/projects-images/project-4.avif";
+import projectFive from "../../assets/projects-images/project-1.avif";
 
 
 const PROJECTS_DATA = [

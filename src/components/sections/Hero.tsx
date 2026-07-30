@@ -109,11 +109,11 @@ const Hero = () => {
         animate={{ x: 0, opacity: 1 }}
         transition={{ duration: 5, ease: "easeOut" }}
       >
-        <h1 className="text-3xl sm:text-4xl lg:text-5xl tracking-wide leading-snug">
+        <h1 className="text-3xl sm:text-4xl lg:text-5xl tracking-wide xl:text-7xl leading-snug">
           Bridging the gap between
         </h1>
         <div className="flex justify-center lg:justify-start min-h-8 sm:min-h-10 lg:min-h-12 mt-1 lg:mt-2">
-          <span className="text-[#C0DC6E] text-3xl sm:text-4xl lg:text-5xl tracking-wide">
+          <span className="text-[#C0DC6E] text-3xl sm:text-4xl lg:text-5xl xl:text-7xl  tracking-wide">
             <TypeAnimation
               sequence={[
                 HERO_INFO[0].text,
@@ -129,11 +129,11 @@ const Hero = () => {
           </span>
         </div>
 
-        <h1 className="text-3xl sm:text-4xl lg:text-5xl tracking-wide leading-8 lg:leading-12 mt-2 lg:mt-3">
+        <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-7xl xl:wrap-break-word xl:leading-20 tracking-wide leading-8 lg:leading-12 mt-2 lg:mt-3">
           to create meaningful digital experiences.
         </h1>
 
-        <h2 className="pt-4 lg:pt-6 text-base sm:text-lg lg:text-xl text-white/80 tracking-wide max-w-md lg:max-w-none">
+        <h2 className="pt-4 lg:pt-6 text-base sm:text-lg lg:text-xl xl:text-3xl xl:pt-6 text-white/80 tracking-wide max-w-md lg:max-w-none">
           Hi, I'm Ayanfeoluwa, a developer, Civil engineer, and gamer.
         </h2>
       </motion.div>

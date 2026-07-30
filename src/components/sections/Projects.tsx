@@ -1,30 +1,15 @@
 import bioBg from "../../../public/bio-bg.jpg";
 import { motion } from "motion/react";
-import projectOne from "../../assets/projects-images/project-0.png";
-import projectThree from "../../assets/projects-images/project-3.png";
-import projectFive from "../../assets/projects-images/project-2.png";
-import projectFour from "../../assets/projects-images/project-4.png";
+import projectOne from "../../assets/projects-images/project-0.avif";
+import projectThree from "../../assets/projects-images/project-3.avif";
+import projectFive from "../../assets/projects-images/project-2.avif";
+import projectFour from "../../assets/projects-images/project-4.avif";
 import { GoDotFill } from "react-icons/go";
 
 const Projects = () => {
   return (
     <section
-      className="
-        min-h-full
-        w-full
-  w-full max-w-[1440px] mx-auto
-        bg-cover
-        bg-center
-
-        px-6
-        sm:px-8
-        md:px-10
-        lg:px-16
-        xl:px-20
-
-        py-12
-        lg:py-20
-      "
+      className=" min-h-full w-full max-w-360 mx-auto bg-cover bg-center px-6 sm:px-8 md:px-10 lg:px-16 xl:px-20 py-12 lg:py-20"
       style={{ backgroundImage: `url(${bioBg})` }}
     >
       {/* Heading */}
