@@ -16,6 +16,7 @@ import projectThree from "../../assets/projects-images/project-3.avif";
 import projectTwo from "../../assets/projects-images/project-2.avif";
 import projectFour from "../../assets/projects-images/project-4.avif";
 import projectFive from "../../assets/projects-images/project-1.avif";
+import projectSix from "../../assets/projects-images/project-5.avif";
 
 
 const PROJECTS_DATA = [
@@ -36,6 +37,22 @@ const PROJECTS_DATA = [
   },
   {
     id: 2,
+    shortDescription:
+      "A responsive landing page for a smoothie brand, designed and built with Webflow.",
+    description: `A single-page landing site for ZEST, a fruit smoothie brand,
+  designed and built in Webflow. The page opens with a full-width hero and the
+  tagline "Good Vibes in Every Bottle," then moves through product sections that
+  pair large product photography with short, energetic copy. Call-to-action
+  buttons and a minimal navigation show how a shopping flow could be laid out,
+  keeping the focus on the product. The layout is responsive across desktop,
+  tablet, and mobile, with optimized WebP images for fast loading. The fresh,
+  health-focused look and bold typography reinforce the brand's feel-good
+  identity.`,
+    image: projectSix,
+    link: "https://zest-ng.webflow.io/",
+  },
+  {
+    id: 3,
     shortDescription: `A modern blog interface with categories, post previews, and
                 interactive design using Next JS, Tailwind CSS, and TypeScript.`,
     description: `A modern blog platform built with Next.js for routing and 
@@ -49,7 +66,7 @@ const PROJECTS_DATA = [
     link: "https://bloggedapp.vercel.app/",
   },
   {
-    id: 3,
+    id: 4,
     shortDescription: `A responsive portfolio and e-commerce store interface with 
       product listings, cart UI, and smooth navigation using Astro web framework.`,
     description: `A responsive e-commerce storefront built with Astro, 
@@ -63,7 +80,7 @@ const PROJECTS_DATA = [
     link: "https://dummy- portfolio-ecommerce.netlify.app/",
   },
   {
-    id: 4,
+    id: 5,
     shortDescription: ` A modern ticket management web application built with React,
                 JavaScript, TypeScript, and Vite. Features secure
                 authentication, full CRUD operations, and real-time dashboard
@@ -80,7 +97,7 @@ const PROJECTS_DATA = [
     link: "https://ticket-management-web-app.netlify.app/",
   },
   {
-    id: 5,
+    id: 6,
     shortDescription: `A modern,cross-platform todo application built with React Native,
               Expo, and Convex for real-time synchronization.`,
     description: `A cross-platform todo app built with React Native and Expo,

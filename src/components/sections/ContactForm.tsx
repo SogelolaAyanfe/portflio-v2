@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Phone, MapPin, Clock } from "lucide-react";
 import { GoDotFill } from "react-icons/go";
 import bioBg from "../../../public/bio-bg.jpg";
-import { motion } from "motion/react";
+// import { motion } from "motion/react";
 
 const ContactForm = () => {
   const [result, setResult] = useState("");
@@ -50,12 +50,9 @@ const ContactForm = () => {
 
   return (
     <section className="w-full min-h-screen  max-w-[1440px] mx-auto flex flex-col md:flex-row justify-between bg-[#C0DC6E] text-black p-6 sm:p-10 max-md:p-none ">
-      <motion.div
+      <div
         className="flex flex-col md:flex-row w-full gap-10 md:gap-0"
-        initial={{ y: -100, opacity: 0, scale: 0.7 }}
-        whileInView={{ y: 0, opacity: 1, scale: 1 }}
-        viewport={{ amount: 0.3 }}
-        transition={{ duration: 1.3, ease: "easeOut" }}
+        
       >
         <div className="w-full md:w-[40%]">
           <div
@@ -174,7 +171,7 @@ const ContactForm = () => {
             )}
           </form>
         </div>
-      </motion.div>
+      </div>
     </section>
   );
 };

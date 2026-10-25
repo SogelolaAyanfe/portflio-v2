@@ -2,8 +2,8 @@ import bioBg from "../../../public/bio-bg.jpg";
 import { motion } from "motion/react";
 import projectOne from "../../assets/projects-images/project-0.avif";
 import projectThree from "../../assets/projects-images/project-3.avif";
+import projectFour from "../../assets/projects-images/project-5.avif";
 import projectFive from "../../assets/projects-images/project-2.avif";
-import projectFour from "../../assets/projects-images/project-4.avif";
 import { GoDotFill } from "react-icons/go";
 
 const Projects = () => {
