@@ -65,7 +65,7 @@ const Projects = () => {
         {[
           { image: projectOne, title: "Gui Beauty" },
           { image: projectFive, title: "Blogged" },
-          { image: projectFour, title: "Taskflow" },
+          { image: projectFour, title: "ZEST" },
           { image: projectThree, title: "Ticketed" },
         ].map((project, index) => (
           <motion.div

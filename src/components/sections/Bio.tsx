@@ -129,12 +129,11 @@ const Bio = () => {
               lg:text-lg
             "
           >
-            Hello! My name is Ayanfeoluwa Sogelola, and I am a Software Engineer
-            with a strong foundation in both Engineering and Frontend Web
-            Development. I hold a Bachelor of Engineering degree in Civil
+            Hello! My name is Ayanfeoluwa Sogelola, and I am a Frontend Software Engineer.
+            I hold a Bachelor of Engineering degree in Civil
             Engineering from the University of Ilorin, which has equipped me
             with strong problem-solving abilities and a keen attention to detail
-            that I now apply in Software Engineering.
+            that I now apply in Frontend Engineering.
           </h3>
 
           <h3
