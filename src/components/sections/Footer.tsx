@@ -6,7 +6,7 @@ const socials = [
   { label: "Resume", href: "../../Documents/Resume.pdf" },
   {
     label: "LinkedIn",
-    href: "https://www.linkedin.com/in/ayanfeoluwa-sogelola-gmnse-70980b248/",
+    href: "https://www.linkedin.com/in/ayanfeoluwa-sogelola-70980b248/",
   },
   { label: "GitHub", href: "https://github.com/SogelolaAyanfe" },
 ];
